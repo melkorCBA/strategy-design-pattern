@@ -1,28 +1,10 @@
 package app;
 
-class RedHeadDuck extends Duck implements Flyable, Quackable {
-
-    @Override
-    public void quack() {
-        System.out.print(" quacks ");
-    }
-
-    @Override
-    public void fly() {
-        System.out.print(" flies ");
-    }
+class RedHeadDuck extends Duck {
 
     @Override
     void display() {
         System.out.println("\nRed Head Duck");
     }
 
-    @Override
-    public void add() {
-        this.display();
-        super.swim();
-        this.quack();
-        this.fly();
-
-    }
 }

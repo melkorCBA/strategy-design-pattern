@@ -1,23 +1,10 @@
 package app;
 
-class RubberDuck extends Duck implements Quackable {
-
-    @Override
-    public void quack() {
-        System.out.print(" quacks ");
-    }
+class RubberDuck extends Duck {
 
     @Override
     void display() {
         System.out.println("\nRubber Duck");
-    }
-
-    @Override
-    public void add() {
-        this.display();
-        super.swim();
-        this.quack();
-
     }
 
 }
