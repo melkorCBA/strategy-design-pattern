@@ -7,16 +7,17 @@
 
 ## Problem Propagation
 
-## **Step 1**
+### **Solution fro Step 1**
+
+```
+Override the fly() method in the RubberDuck class to do nothing
+```
+
+## **Step 2**
 
 ### Current Design
 
-- Super Class
-  - Duck
-- Sub Classes
-  - MallardDuck
-  - RedHeadDuck
-  - RubberDuck
+- Similar to the previous design
 
 ### Current Pond
 
@@ -24,38 +25,24 @@
 - RedHead Duck
 - Rubber Duck
 
-**Duck class**
-
-![MallardDuckstep1](/src/assets/step1/Step1classDuck.png#thumbnail)
-
-**MallardDuck class**
-
-![MallardDuckstep1](/src/assets/step1/step1classMallard.png#thumbnail)
-
-**RedHeadDuck class**
-
-![MallardDuckstep1](/src/assets/step1/step1classRedhead.png#thumbnail)
-
 **RubberDuck class**
 
-![MallardDuckstep1](/src/assets/step1/step1classRubber.png#thumbnail)
+![MallardDuckstep1](/src/assets/step2/step2classRubber.png#thumbnail)
 
-**App class**
+**Step 2 Output**
 
-![MallardDuckstep1](/src/assets/step1/step1classApp.png#thumbnail)
-
-**Step 1 Output**
-
-![MallardDuckstep1](/src/assets/step1/step1output.png#thumbnail)
+![MallardDuckstep1](/src/assets/step2/step2output.png#thumbnail)
 
 ```
-As you can see it is not ideal fro rubber duck to fly. When adding the flying behavior to the ducks supper class the programmer failed to identify that it is was not appropriate for some duck subclasses.
+What happens when a wooden decoy duck added to the programme?.
 ```
-
-\*_A localized update to the code caused a non-local side effect (flying rubber ducks)_
 
 ### **Solution**
 
 ```
-Override the fly() method in the RubberDuck class to do nothing
+Override the fly(), swim(), quack(),  method in the DecoyDuck class to do nothing. But what happens when new types of duck (like rubber duck, decoy duck) adds to the system quit frequently. Then we'd have an overwhelming task in our hands to override every method fro each new class. So the Inheritance (concept of OOP) is not really the way to go. We now need a cleaner way to have only some(but not all) of the duck types fly or quack.
+```
+
+```
+A better solution here would be to use interfaces.
 ```
