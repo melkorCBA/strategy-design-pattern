@@ -10,6 +10,7 @@ public class App {
 
         for (Duck duck : ducks) {
             duck.display();
+            duck.swim();
             duck.performFly();
             duck.performQuack();
 
