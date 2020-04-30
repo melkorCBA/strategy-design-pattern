@@ -1,13 +1,15 @@
 package app;
 
-import app.FlyBehavior.FlyWithWings;
-import app.QuackBehavior.Quack;
+class RedHeadDuck extends Duck implements Flyable, Quackable {
 
-class RedHeadDuck extends Duck {
+    @Override
+    public void quack() {
+        System.out.print(" quacks ");
+    }
 
-    public RedHeadDuck() {
-        flyBehavior = new FlyWithWings();
-        quackBehavior = new Quack();
+    @Override
+    public void fly() {
+        System.out.print(" flies ");
     }
 
     @Override
@@ -15,4 +17,12 @@ class RedHeadDuck extends Duck {
         System.out.println("\nRed Head Duck");
     }
 
+    @Override
+    public void add() {
+        this.display();
+        super.swim();
+        this.quack();
+        this.fly();
+
+    }
 }

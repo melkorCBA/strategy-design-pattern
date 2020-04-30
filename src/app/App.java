@@ -9,9 +9,7 @@ public class App {
         ducks[3] = new DecoyDuck();
 
         for (Duck duck : ducks) {
-            duck.display();
-            duck.performFly();
-            duck.performQuack();
+            duck.add();
 
         }
 

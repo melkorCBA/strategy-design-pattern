@@ -1,18 +1,29 @@
 package app;
 
-import app.FlyBehavior.FlyWithWings;
-import app.QuackBehavior.Quack;
+class MallardDuck extends Duck implements Flyable, Quackable {
 
-class MallardDuck extends Duck {
+    @Override
+    public void quack() {
+        System.out.print(" quacks ");
+    }
 
-    public MallardDuck() {
-        quackBehavior = new Quack();
-        flyBehavior = new FlyWithWings();
+    @Override
+    public void fly() {
+        System.out.print(" flies ");
     }
 
     @Override
     void display() {
         System.out.println("\nMallard Duck");
+    }
+
+    @Override
+    public void add() {
+        this.display();
+        super.swim();
+        this.quack();
+        this.fly();
+
     }
 
 }
