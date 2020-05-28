@@ -39,9 +39,10 @@ What happens when a wooden decoy duck added to the programme?.
 
 ### **Solution**
 
-```
-Override the fly(), swim(), quack(),  method in the DecoyDuck class to do nothing. But what happens when new types of duck (like rubber duck, decoy duck) adds to the system quit frequently. Then we'd have an overwhelming task in our hands to override every method fro each new class. So the Inheritance (concept of OOP) is not really the way to go. We now need a cleaner way to have only some(but not all) of the duck types fly or quack.
-```
+<p>
+Override the fly(), swim(), quack(),  method in the DecoyDuck class to do nothing. <br>
+But what happens when new types of duck (like rubber duck, decoy duck) adds to the system quit frequently. Then we'd have an overwhelming task in our hands to override every method fro each new class. So the Inheritance (concept of OOP) is not really the way to go. We now need a cleaner way to have only some(but not all) of the duck types fly or quack.
+</p>
 
 ```
 A better solution here would be to use interfaces.
