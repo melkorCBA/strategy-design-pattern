@@ -85,10 +85,10 @@ An additional  add method is used here because if the encapsulation. Now what le
 
 ## **Design Principle 1**
 
-```
-**Identify the aspects of your application that vary and separate them from what stays the same**.
-```
+<p style="background-colour:blue;">
+Identify the aspects of your application that vary and separate them from what stays the same.
+<p>
 
-```
+<p>
 Take what varies and "encapsulate" it so it won't affect the rest of the code. later you can alter or extend the parts that vary without affecting those that don't.
-```
+<p>
