@@ -12,10 +12,9 @@ Override the fly() method in the RubberDuck class to do nothing
 ```
 
 ### **Solution for Step 2**
-
-```
+<p style="background-color: #f0f5f1; padding:10px;">
 Override the fly(), swim(), quack(),  method in the DecoyDuck class to do nothing. But what happens when new types of duck (like rubber duck, decoy duck) adds to the system quit frequently. Then we'd have an overwhelming task in our hands to override every method fro each new class. So the Inheritance (concept of OOP) is not really the way to go. We now need a cleaner way to have only some(but not all) of the duck types fly or quack.
-```
+<p>
 
 ```
 A better solution here would be to use interfaces.
@@ -79,13 +78,13 @@ A better solution here would be to use interfaces.
 
 ![MallardDuckstep1](/src/assets/step3/step2output.png#thumbnail)
 
-```
+<p style="background-color: #f0f5f1; padding:10px;">
 An additional  add method is used here because if the encapsulation. Now what let's say we need to make a little change in flying behavior. We have to go through all the flying duck subclass. This completely destroys the code reusing concept (Lot of duplication).
-```
+<p>
 
 ## **Design Principle 1**
 
-<p style="background-colour:blue;">
+<p style="background-color: #e8ffed; padding:10px;">
 Identify the aspects of your application that vary and separate them from what stays the same.
 <p>
 
