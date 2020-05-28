@@ -7,23 +7,21 @@
 
 ## Problem Propagation
 
-**Solution for Step 3**
-
 ```
-An additional  add method is used here because if the encapsulation. Now what let's say we need to make a little change in flying behavior. We have to go through all the flying duck subclass. This completely destroys the code reusing concept (Lot of duplication).
+Override the fly() method in the RubberDuck class to do nothing
 ```
 
-## **Design Principle 1**
+### **Solution for Step 2**
+
+<p style="background-color: #f0f5f1; padding:10px;">
+Override the fly(), swim(), quack(),  method in the DecoyDuck class to do nothing.<br> But what happens when new types of duck (like rubber duck, decoy duck) adds to the system quit frequently.<br> Then we'd have an overwhelming task in our hands to override every method fro each new class. So the Inheritance (concept of OOP) is not really the way to go. We now need a cleaner way to have only some(but not all) of the duck types fly or quack.
+</p>
 
 ```
-**Identify the aspects of your application that vary and separate them from what stays the same**.
+A better solution here would be to use interfaces.
 ```
 
-```
-Take what varies and "encapsulate" it so it won't affect the rest of the code. later you can alter or extend the parts that vary without affecting those that don't.
-```
-
-## **Step 4**
+## **Step 3**
 
 ### Current Design
 
@@ -34,102 +32,63 @@ Take what varies and "encapsulate" it so it won't affect the rest of the code. l
   - RedHeadDuck
   - RubberDuck
   - DecoyDuck
-- Behavior
-  - Fly Behavior
-    - FlyBehavior Interface
-    - FlyWithWings Class
-    - FlyNoWay Class
-  - Quack Behavior
-    - QuackBehavior Interface
-    - Quack Class
-    - Squeak Class
-    - MuteQuack Class
-    
+- Interfaces
+  - Flyable
+  - Quackable
 
 ### Current Pond
 
 - Mallard Duck
 - RedHead Duck
 - Rubber Duck
-
-**Project Structure**
-
-![MallardDuckstep1](/src/assets/step4/step4projectStructure.png#thumbnail)
+- Decoy Duck
 
 **Duck class**
 
-![MallardDuckstep1](/src/assets/step4/step4classDuck.png#thumbnail)
+![MallardDuckstep1](/src/assets/step3/step2classDuck.png#thumbnail)
 
 **MallardDuck class**
 
-![MallardDuckstep1](/src/assets/step4/step4classMallard.png#thumbnail)
+![MallardDuckstep1](/src/assets/step3/step3classMallard.png#thumbnail)
 
 **RedHeadDuck class**
 
-![MallardDuckstep1](/src/assets/step4/step4classRedhead.png#thumbnail)
+![MallardDuckstep1](/src/assets/step3/step3classRedhead.png#thumbnail)
 
 **RubberDuck class**
 
-![MallardDuckstep1](/src/assets/step4/step4classRubber.png#thumbnail)
+![MallardDuckstep1](/src/assets/step3/step3classRubber.png#thumbnail)
 
 **DecoyDuck class**
 
-![MallardDuckstep1](/src/assets/step4/step4classDecoy.png#thumbnail)
+![MallardDuckstep1](/src/assets/step3/step3classDecoy.png#thumbnail)
 
-**FlyBehavior interface**
+**Flyable interface**
 
-![MallardDuckstep1](/src/assets/step4/stepinterfaceFlyBehavior.png#thumbnail)
+![MallardDuckstep1](/src/assets/step3/step3interfaceFlyable.png#thumbnail)
 
+**Quackable interface**
 
-**FlyWithWings class**
-
-![MallardDuckstep1](/src/assets/step4/step4classFlyWithWings.png#thumbnail)
-
-**FlyNoWay class**
-
-![MallardDuckstep1](/src/assets/step4/step4interfaceFlyNoWay.png#thumbnail)
-
-
-**QuackBehavior interface**
-
-![MallardDuckstep1](/src/assets/step4/stepinterfaceQuackBehavior.png#thumbnail)
-
-
-**Quack class**
-
-![MallardDuckstep1](/src/assets/step4/step4classQuack.png#thumbnail)
-
-**Squeak class**
-
-![MallardDuckstep1](/src/assets/step4/step4classSqueak.png#thumbnail)
-
-
-**MuteQuack class**
-
-![MallardDuckstep1](/src/assets/step4/step4classMuteQuack.png#thumbnail)
-
-
+![MallardDuckstep1](/src/assets/step3/step3interfaceQuackable.png#thumbnail)
 
 **App class**
 
-![MallardDuckstep1](/src/assets/step4/step4classApp.png#thumbnail)
+![MallardDuckstep1](/src/assets/step3/step3classApp.png#thumbnail)
 
-**Step 4 Output**
+**Step 3 Output**
 
-![MallardDuckstep1](/src/assets/step4/step4output.png#thumbnail)
+![MallardDuckstep1](/src/assets/step3/step2output.png#thumbnail)
 
-```
-As you can see it is not ideal fro rubber duck to fly. When adding the flying behavior to the ducks supper class the programmer failed to identify that it is was not appropriate for some duck subclasses.
-```
+<p style="background-color: #f0f5f1; padding:10px;">
+An additional  add method is used here because if the encapsulation. Now what let's say we need to make a little change in flying behavior. We have to go through all the flying duck subclass. This completely destroys the code reusing concept (Lot of duplication).
+<p>
 
-\*_A localized update to the code caused a non-local side effect (flying rubber ducks)_
+## **Design Principle 1**
 
-### **Solution**
+<p style="background-color: #e8ffed; padding:10px;">
+Identify the aspects of your application that vary and separate them from what stays the same.
+<p>
 
-```
-Override the fly() method in the RubberDuck class to do nothing
-```
-
-```
-
-```
+<p>
+Take what varies and "encapsulate" it so it won't affect the rest of the code. later you can alter or extend the parts that vary without affecting those that don't.
+<p>
